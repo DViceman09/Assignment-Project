@@ -1,0 +1,100 @@
+{
+	"info": {
+		"_postman_id": "d1757693-5bd2-4df6-a9f0-c30e14f09c4d",
+		"name": "Assignment_Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "13120478"
+	},
+	"item": [
+		{
+			"name": "Signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"Sandesh Kadam\",\r\n    \"email\" : \"sandeshkadam@ymail.com\",\r\n    \"password\" : \"123456789\",\r\n    \"address\" : \"AXGER,ARGEARGK<ASGERGER\",\r\n    \"ROLE\" : \"ROLE_STUDENT\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/auth/signup"
+			},
+			"response": []
+		},
+		{
+			"name": "SignIn",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\" : \"sandeshkadam@ymail.com\",\r\n    \"password\": \"123456789\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/auth/signin"
+			},
+			"response": []
+		},
+		{
+			"name": "Create_Subject",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MzM5OTY3MTQsImV4cCI6MTgyMDM5NjcxNCwiZW1haWwiOiJzYW5kZXNoa2FkYW1AeW1haWwuY29tIiwiYXV0aG9yaXRpZXMiOiJST0xFX1NUVURFTlQifQ.WP70JLfA1rW63KFVAIaP9Yd5esDFgcBVHsYK6JTYleokHfCPqzBbYZyMlRjgF6xGw44x73g32G5jDObi7TtxXw"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"Maths\",\r\n    \"students\":[\r\n        {\r\n            \"name\" : \"Sandesh Kadam\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/subject"
+			},
+			"response": []
+		},
+		{
+			"name": "GET ALL STUDENTS",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MzM5OTY3MTQsImV4cCI6MTgyMDM5NjcxNCwiZW1haWwiOiJzYW5kZXNoa2FkYW1AeW1haWwuY29tIiwiYXV0aG9yaXRpZXMiOiJST0xFX1NUVURFTlQifQ.WP70JLfA1rW63KFVAIaP9Yd5esDFgcBVHsYK6JTYleokHfCPqzBbYZyMlRjgF6xGw44x73g32G5jDObi7TtxXw"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/students"
+			},
+			"response": []
+		},
+		{
+			"name": "GET ALL SUBJECTS",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MzM5OTY3MTQsImV4cCI6MTgyMDM5NjcxNCwiZW1haWwiOiJzYW5kZXNoa2FkYW1AeW1haWwuY29tIiwiYXV0aG9yaXRpZXMiOiJST0xFX1NUVURFTlQifQ.WP70JLfA1rW63KFVAIaP9Yd5esDFgcBVHsYK6JTYleokHfCPqzBbYZyMlRjgF6xGw44x73g32G5jDObi7TtxXw"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/subjects"
+			},
+			"response": []
+		}
+	]
+}
