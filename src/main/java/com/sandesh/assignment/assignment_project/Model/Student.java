@@ -3,17 +3,15 @@ package com.sandesh.assignment.assignment_project.Model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.HashSet;
 import java.util.Set;
 
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@Table
 public class Student {
 
     @Id
@@ -24,8 +22,11 @@ public class Student {
 
     private String email;
 
+    private String password;
+
     private String address;
 
+    private USER_ROLE role = USER_ROLE.ROLE_STUDENT;
 
     @ManyToMany
     @JoinTable(
@@ -33,15 +34,54 @@ public class Student {
             joinColumns = @JoinColumn(name = "student_id"),
             inverseJoinColumns = @JoinColumn(name = "subject_id")
     )
+
     private Set<Subject> subjects = new HashSet<>();
 
-    // Getters and Setters
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
-    public String getAddress() { return address; }
-    public void setAddress(String address) { this.address = address; }
-    public Set<Subject> getSubjects() { return subjects; }
-    public void setSubjects(Set<Subject> subjects) { this.subjects = subjects; }
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public USER_ROLE getRole() {
+        return role;
+    }
+
+    public void setRole(USER_ROLE role) {
+        this.role = role;
+    }
+
+    public Set<Subject> getSubjects() {
+        return subjects;
+    }
+
+    public void setSubjects(Set<Subject> subjects) {
+        this.subjects = subjects;
+    }
 }

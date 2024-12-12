@@ -20,18 +20,9 @@ public class StudentController {
             return ResponseEntity.ok(studentService.createStudent(student));
     }
 
-    @PostMapping("/subject")
-    public ResponseEntity<Subject> createSubject(@RequestBody Subject subject) {
-        return ResponseEntity.ok(studentService.createSubject(subject));
-    }
-
     @GetMapping("/students")
     public ResponseEntity<List<Student>> getAllStudents() {
         return ResponseEntity.ok(studentService.getAllStudents());
     }
 
-    @GetMapping("/subjects")
-    public ResponseEntity<List<Subject>> getAllSubjects() {
-        return ResponseEntity.ok(studentService.getAllSubjects());
-    }
 }
